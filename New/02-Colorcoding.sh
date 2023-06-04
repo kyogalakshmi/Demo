@@ -1,0 +1,1 @@
+echo -e "\e[31mRed Text\e[0m"
