@@ -2,10 +2,10 @@ Action=$1
 
 case $Action in
 start)
-echo "starting RabbitMQ Service"
+echo -e "\e[32m starting RabbitMQ Service \e[0m"
 ;;
 stop)
-echo "Stopping the RabbitMQ Service"
+echo -e "\e[31m Stopping the RabbitMQ Service\e[0m"
 ;;
 restart)
 echo "Restarting the RabbitMQ Service"
