@@ -21,4 +21,6 @@ fi
 echo "Installing Nginx :"
 yum install nginx -y &>> "/tmp/$COMPONENT.log"
 
+echo $COMPONENT
+
 
