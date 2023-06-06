@@ -13,8 +13,8 @@
 # rm -rf frontend-main README.md
 # mv localhost.conf /etc/nginx/default.d/roboshop.conf
 
-ID =$(id -u)
-if[$ID -ne 0]; then
+ID=$(id -u)
+if[ $ID -ne 0] ; then
 echo -e "\e[31m This is expected to run by a root user with a sudo privelege\e[0m"
 exit 1 
 fi
