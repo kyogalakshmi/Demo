@@ -20,6 +20,3 @@ if [ $ID -ne 0 ] ; then
 fi
 echo "Installing Nginx :"
 yum install nginx -y &>> "/tmp/$COMPONENT.log"
-
-
-
