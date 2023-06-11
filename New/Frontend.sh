@@ -25,7 +25,7 @@ else
   echo -e "\e[31m failure \e[0m"
   fi
 }
-echo "Installing Nginx :"
+echo -n "Installing Nginx :"
 yum install nginx -y &>> "/tmp/$COMPONENT.log"
 stat $?
   echo -n "Downloading the $COMPONENT component :"
@@ -42,6 +42,7 @@ mv frontend-main/* . &>> "/tmp/$COMPONENT.log"
 mv static/* . &>> "/tmp/$COMPONENT.log"
 rm -rf frontend-main README.md &>> "/tmp/$COMPONENT.log"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> "/tmp/$COMPONENT.log"
+stat $?
 
 echo -n "Starting $COMPONENT services: "
 systemctl enable nginx &>> "/tmp/$COMPONENT.log"
