@@ -44,6 +44,6 @@ rm -rf frontend-main README.md &>> "/tmp/$COMPONENT.log"
 mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> "/tmp/$COMPONENT.log"
 
 echo -n "Starting $COMPONENT services: "
-systemctl enable nginx
-systemctl start nginx
+systemctl enable nginx &>> "/tmp/$COMPONENT.log"
+systemctl start nginx &>> "/tmp/$COMPONENT.log"
 stat $?
