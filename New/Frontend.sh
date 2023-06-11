@@ -37,11 +37,11 @@ rm -rf * &>> "/tmp/$COMPONENT.log"
 stat $?
 
 echo -n "Extracting $COMPONENT component"
-unzip /tmp/frontend.zip
-mv frontend-main/* .
-mv static/* .
-rm -rf frontend-main README.md
-mv localhost.conf /etc/nginx/default.d/roboshop.conf
+unzip /tmp/frontend.zip &>> "/tmp/$COMPONENT.log"
+mv frontend-main/* . &>> "/tmp/$COMPONENT.log"
+mv static/* . &>> "/tmp/$COMPONENT.log"
+rm -rf frontend-main README.md &>> "/tmp/$COMPONENT.log"
+mv localhost.conf /etc/nginx/default.d/roboshop.conf &>> "/tmp/$COMPONENT.log"
 
 echo -n "Starting $COMPONENT services: "
 systemctl enable nginx
