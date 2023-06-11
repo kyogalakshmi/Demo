@@ -20,3 +20,10 @@ if [ $ID -ne 0 ] ; then
 fi
 echo "Installing Nginx :"
 yum install nginx -y &>> "/tmp/$COMPONENT.log"
+if [ $1 -eq 0 ] ; then
+  echo -e "\e[32m success \e[0m"
+else
+  echo -e "\e[31m failure \e[0m"
+  fi
+  echo -n "Downloading the $COMPONENT component :"
+  curl -s -L -o /tmp/frontend.zip "https://github.com/stans-robot-project/frontend/archive/main.zip"
