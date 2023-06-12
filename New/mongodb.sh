@@ -46,8 +46,8 @@ stat $?
 
 echo -n "Injecting the Schema : "
 cd mongodb-main
-mongo < catalogue.js 
-mongo < users.js 
+mongo < catalogue.js &>> "/tmp/$COMPONENT.log"
+mongo < users.js  &>> "/tmp/$COMPONENT.log"
 stat $?
 
 # *************************Note*****************
