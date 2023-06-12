@@ -1,7 +1,5 @@
 COMPONENT=mongodb
 LOGFILE = "/tmp/$COMPONENT.log"
-
-
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then
   echo -e "\e[31m This is expected to run by a root user with a sudo privelege\e[0m"
@@ -24,6 +22,6 @@ yum install -y $COMPONENT-org     &>> "/tmp/$COMPONENT.log"
 stat $?
 
 echo -n "Starting $COMPONENT : "
-sudo systemctl enable mongod     &>> "$LOGFILE"
-sudo systemctl start mongod      &>> "$LOGFILE"
+sudo systemctl enable mongod     &>> ${LOGFILE}
+sudo systemctl start mongod      &>> ${LOGFILE}
 stat $?
