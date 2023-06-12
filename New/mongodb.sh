@@ -1,5 +1,7 @@
 COMPONENT=mongodb
-LOGFILE = "/tmp/${COMPONENT}.log"
+LOGFILE = "/tmp/$COMPONENT.log"
+
+
 ID=$(id -u)
 if [ $ID -ne 0 ] ; then
   echo -e "\e[31m This is expected to run by a root user with a sudo privelege\e[0m"
@@ -23,5 +25,5 @@ stat $?
 
 echo -n "Starting $COMPONENT : "
 systemctl enable mongod &>> $LOGFILE
-systemctl start mongod &>> $LOGFILE
+systemctl start mongod &>>  $LOGFILE
 stat $?
