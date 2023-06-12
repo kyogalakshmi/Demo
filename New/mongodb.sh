@@ -50,7 +50,7 @@ mongo < catalogue.js &>> "/tmp/$COMPONENT.log"
 mongo < users.js  &>> "/tmp/$COMPONENT.log"
 stat $?
 
-echo -e "**************** \e[31m $COMPONENT Installation is completed\e[0m ****************"
+echo -e "**************** \e[35m $COMPONENT Installation is completed\e[0m ****************"
 
 # *************************Note*****************
 # Bash : to comment & un comment :
