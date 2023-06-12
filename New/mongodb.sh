@@ -34,3 +34,22 @@ echo -n "Starting $COMPONENT : "
 sudo systemctl enable mongod      &>> "/tmp/$COMPONENT.log"
 sudo systemctl start mongod       &>> "/tmp/$COMPONENT.log"
 stat $?
+
+echo -n "Downloading the $COMPONENT schema : "
+curl -s -L -o /tmp/mongodb.zip "https://github.com/stans-robot-project/mongodb/archive/main.zip"
+stat $?
+
+echo -n "Extracting the $COMPONENT Schema :"
+cd /tmp
+unzip mongodb.zip &>> "/tmp/$COMPONENT.log"
+stat $?
+
+echo -n "Injecting the Schema : "
+cd mongodb-main
+mongo < catalogue.js 
+mongo < users.js 
+stat $?
+
+# *************************Note*****************
+# Bash : to comment & un comment :
+# ctrl + / (forward slash)
