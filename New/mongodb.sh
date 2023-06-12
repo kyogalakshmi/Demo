@@ -22,6 +22,6 @@ yum install -y $COMPONENT-org     &>> "/tmp/$COMPONENT.log"
 stat $?
 
 echo -n "Starting $COMPONENT : "
-sudo systemctl enable mongod     &>> "/tmp/$COMPONENT.log"
-sudo systemctl start mongod      &>> "/tmp/$COMPONENT.log"
+sudo systemctl enable mongod      &>> "/tmp/$COMPONENT.log"
+sudo systemctl start mongod       &>> "/tmp/$COMPONENT.log"
 stat $?
