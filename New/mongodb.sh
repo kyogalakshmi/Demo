@@ -20,10 +20,10 @@ curl -s -o /etc/yum.repos.d/mongodb.repo https://raw.githubusercontent.com/stans
 stat $?
 
 echo -n "Installing $COMPONENT : "
-yum install -y $COMPONENT-org &>> $LOGFILE
+sudo yum install -y $COMPONENT-org &>> $LOGFILE
 stat $?
 
 echo -n "Starting $COMPONENT : "
-systemctl enable mongod &>> $LOGFILE
-systemctl start mongod &>>  $LOGFILE
+sudo systemctl enable mongod &>> $LOGFILE
+sudo systemctl start mongod &>>  $LOGFILE
 stat $?
