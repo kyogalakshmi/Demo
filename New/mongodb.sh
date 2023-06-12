@@ -41,7 +41,7 @@ stat $?
 
 echo -n "Extracting the $COMPONENT Schema :"
 cd /tmp
-unzip mongodb.zip &>> "/tmp/$COMPONENT.log"
+unzip -o mongodb.zip &>> "/tmp/$COMPONENT.log" # To tell to overwrite the unzip
 stat $?
 
 echo -n "Injecting the Schema : "
