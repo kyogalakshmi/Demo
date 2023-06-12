@@ -25,3 +25,12 @@ echo -n "Starting $COMPONENT : "
 sudo systemctl enable mongod      &>> "/tmp/$COMPONENT.log"
 sudo systemctl start mongod       &>> "/tmp/$COMPONENT.log"
 stat $?
+
+echo -n "Enabling the DB Visisbility : "
+sed -i -e 's/127.0.0.1/0.0.0.0/' /etc/mongo.conf
+stat $?
+
+echo -n "Starting $COMPONENT : "
+sudo systemctl enable mongod      &>> "/tmp/$COMPONENT.log"
+sudo systemctl start mongod       &>> "/tmp/$COMPONENT.log"
+stat $?
