@@ -13,6 +13,6 @@
   tasks:
     - name: Printing Hello form play2
       ansible.builtin.debug:
-       msg: {{ Var }}  # cmd line arg ->> -e Var=I_am_from_Prod_env
+       msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
        # Precedence of variable
        # commandline - Local - Global
