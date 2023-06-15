@@ -22,8 +22,7 @@
 - name: Play3
   hosts: prod
   tasks:
-    - name: Printing prompt
-      ansible.builtin.debug:
+    ansible.builtin.debug:
        msg: "{{ URLName }}"
        # Precedence of variable
        # commandline - Local - external File - Global
