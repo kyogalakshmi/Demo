@@ -21,7 +21,7 @@
        msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
 
     - name: Printing prompt  
-       ansible.builtin.debug:
+      ansible.builtin.debug:
         msg: "{{ URLName }}"  
        
        
