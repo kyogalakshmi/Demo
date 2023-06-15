@@ -4,6 +4,9 @@
    URL: play.google.com     # Global variable
   vars_files:   #From external file
    - dev-vars.yaml
+  vars_prompt:  #Prompting the Value from CLI
+   - name: URLName
+     prompt: Enter the URLName
   tasks:
     - name: Printing Hello form play1
       vars:
@@ -16,5 +19,11 @@
     - name: Printing Hello form play2
       ansible.builtin.debug:
        msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
+
+    - name: Printing prompt  
+       ansible.builtin.debug:
+        msg: "{{ URLName }}"  
+       
+       
        # Precedence of variable
-       # From externalfile - commandline - Local - Global
+       # commandline - Local - external File - Global
