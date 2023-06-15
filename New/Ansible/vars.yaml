@@ -24,8 +24,8 @@
   hosts: prod
   tasks:
    - name: Printing Hello form play2
-      ansible.builtin.debug:
-       msg: Url from the prompt variable is {{URLName}}  
+    ansible.builtin.debug:
+     msg: Url from the prompt variable is {{URLName}}  
 
        
        # Precedence of variable
