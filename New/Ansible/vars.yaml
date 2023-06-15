@@ -1,0 +1,8 @@
+- name: Play1
+  hosts: all
+  vars:
+   URL: play.google.com
+  tasks:
+    - name: Printing Hello form play1
+      ansible.builtin.debug:
+       msg: "{{ URL }}"
