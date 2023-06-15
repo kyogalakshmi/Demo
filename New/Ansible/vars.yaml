@@ -1,8 +1,12 @@
 - name: Play1
   hosts: all
   vars:
-   URL: play.google.com
+   URL: play.google.com   # Global variable
   tasks:
     - name: Printing Hello form play1
       ansible.builtin.debug:
        msg: "{{ URL }}"
+      vars:
+      URL: task.gmail.com # Local Variable
+
+    
