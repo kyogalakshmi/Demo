@@ -20,9 +20,9 @@
       ansible.builtin.debug:
        msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
 
-    - name: Printing prompt  
+    - name: Printing prompt Variable
       ansible.builtin.debug:
-        msg: Url from the prompt variable is {{URLName}}  
+       msg: Url from the prompt variable is {{URLName}}  
        
        
        # Precedence of variable
