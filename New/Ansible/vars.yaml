@@ -22,7 +22,7 @@
 
     - name: Printing prompt  
       ansible.builtin.debug:
-        msg: "{{ URLName }}"  
+        msg: Url from the prompt variable is {{URLName}}  
        
        
        # Precedence of variable
