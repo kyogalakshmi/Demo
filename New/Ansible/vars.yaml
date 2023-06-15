@@ -2,6 +2,8 @@
   hosts: all
   vars:
    URL: play.google.com     # Global variable
+  vars_files:   #From external file
+   - dev-vars.yaml
   tasks:
     - name: Printing Hello form play1
       vars:
@@ -15,4 +17,4 @@
       ansible.builtin.debug:
        msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
        # Precedence of variable
-       # commandline - Local - Global
+       # From externalfile - commandline - Local - Global
