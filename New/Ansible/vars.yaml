@@ -19,11 +19,11 @@
     - name: Printing Hello form play2
       ansible.builtin.debug:
        msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
-- name: Play2
+- name: Play3
   hosts: prod
   tasks:
     - name: Printing prompt
       ansible.builtin.debug:
-       msg: Url from the prompt variable is {{URLName}}  
+       msg: "{{ URLName }}"
        # Precedence of variable
        # commandline - Local - external File - Global
