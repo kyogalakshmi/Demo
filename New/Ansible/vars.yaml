@@ -8,3 +8,11 @@
        URL: task.gmail.com    # Local Variable
       ansible.builtin.debug:
        msg: "{{ URL }}"
+- name: Play2
+  hosts: prod
+  tasks:
+    - name: Printing Hello form play2
+      ansible.builtin.debug:
+       msg: {{ Var }}  # cmd line arg ->> -e Var=I_am_from_Prod_env
+       # Precedence of variable
+       # commandline - Local - Global
