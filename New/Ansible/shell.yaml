@@ -4,6 +4,9 @@
     - name: Demo on using Shell module
       ansible.builtin.shell: uptime
       register: OUT
-    - name: Demo on using Shell module
+    - name: Printing the OUT Variable
       ansible.builtin.debug:
        msg: "{{OUT}}"
+    - name: Printing the STDOUT in OUT Variable
+      ansible.builtin.debug:
+       msg: "{{OUT.stdout}}"
