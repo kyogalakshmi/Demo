@@ -5,7 +5,7 @@
   vars_files:   #From external file
    - dev-vars.yaml
   vars_prompt:  #Prompting the Value from CLI
-   - name: URLNAME
+   - name: UNAME
      prompt: Enter the URLNAME
      private: no
   tasks:
@@ -25,6 +25,6 @@
   tasks:
    - name: Printing prompt
      ansible.builtin.debug:
-       msg: "{{ URLNAME }}"
+       msg: "{{ UNAME }}"
        # Precedence of variable
        # commandline - Local - external File - Global
