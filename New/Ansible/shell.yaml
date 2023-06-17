@@ -3,3 +3,7 @@
   tasks:
     - name: Demo on using Shell module
       ansible.builtin.shell: uptime
+      register: OUT
+    - name: Demo on using Shell module
+      ansible.builtin.debug:
+       msg: "{{OUT}}"
