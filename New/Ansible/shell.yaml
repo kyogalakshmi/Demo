@@ -10,3 +10,11 @@
     - name: Printing the STDOUT in OUT Variable
       ansible.builtin.debug:
        msg: "{{OUT.stdout}}"
+    - name: Set a complex variable
+      set_fact:
+        STATUSCODE: "{{OUT.rc}}"
+    - name: Printing the uptime command exit code
+      ansible.builtin.debug:
+        msg: uptime statuscode is {{STATUSCODE}}
+         
+      
