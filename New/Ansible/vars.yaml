@@ -7,6 +7,7 @@
   vars_prompt:  #Prompting the Value from CLI
    - name: URLNAME
      prompt: Enter the URLNAME
+     private: no
   tasks:
     - name: Printing Hello form play1
       vars:
