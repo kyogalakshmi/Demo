@@ -1,1 +1,7 @@
-#facts is a property
+#facts is a property ->> setup module is used ->> ansible all -i inv -m setup
+- name: Demo on using facts
+  hosts: all
+  tasks:
+    - name: Printing the fact
+      ansible.builtin.debug:
+       msg: "{{ansible_distribution}}"
