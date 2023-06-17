@@ -5,3 +5,6 @@
     - name: Printing the fact
       ansible.builtin.debug:
        msg: "{{ansible_distribution}}"
+    - name: Printing the macAddress of the Machines
+      ansible.builtin.debug:
+       msg: "{{ansible_default_ipv4.macaddress}}"
