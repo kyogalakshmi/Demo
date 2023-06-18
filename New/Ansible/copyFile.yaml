@@ -1,5 +1,5 @@
 - name: Demo on using copyFile
-  hosts: all
+  hosts: dev
   tasks:
     - name: 
       ansible.builtin.copy:
@@ -7,6 +7,6 @@
        dest: /home/centos
     - name: 
       ansible.builtin.fetch:
-       src: /home/centos/Demo/New/Ansible/new.txt
-       dest: /home/centos
+       src: /home/centos/new.txt
+       dest: /home/centos/Demo/New/Ansible/
      
