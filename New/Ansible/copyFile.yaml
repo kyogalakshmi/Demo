@@ -9,3 +9,4 @@
       ansible.builtin.fetch:
        src: /home/centos
        dest: /home/centos/Demo/New/Ansible
+       flat: false
