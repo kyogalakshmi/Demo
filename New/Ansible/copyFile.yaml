@@ -5,3 +5,7 @@
       ansible.builtin.copy:
        src: systemd.txt
        dest: /home/centos
+    - name: 
+      ansible.builtin.fetch:
+       src: /home/centos
+       dest: /home/centos/Demo/New/Ansible
