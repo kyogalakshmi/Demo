@@ -1,0 +1,7 @@
+- name: Demo on using copyFile
+  hosts: all
+  tasks:
+    - name: 
+      ansible.builtin.copy:
+       src: systemd.txt
+       dest: /home/centos
