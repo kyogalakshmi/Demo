@@ -1,0 +1,11 @@
+- name: Demo on using priveledge user
+  hosts: all
+  tasks:
+    - name: Demo on using loops 1
+      ansible.builtin.debug:
+       msg: Value is {{ item }}
+      loop:
+       - 10
+       - 20
+       - 30
+       - 40
