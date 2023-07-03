@@ -1,0 +1,10 @@
+#facts is a property ->> setup module is used ->> ansible all -i inv -m setup
+- name: Demo on using facts
+  hosts: all
+  tasks:
+    - name: Printing the fact
+      ansible.builtin.debug:
+       msg: "{{ansible_distribution}}"
+    - name: Printing the macAddress of the Machines
+      ansible.builtin.debug:
+       msg: "{{ansible_default_ipv4.macaddress}}"

@@ -1,0 +1,12 @@
+- name: Demo on using copyFile
+  hosts: dev
+  tasks:
+    - name: 
+      ansible.builtin.copy:
+       src: systemd.txt
+       dest: /home/centos
+    - name: 
+      ansible.builtin.fetch:
+       src: /home/centos/new.txt
+       dest: /home/centos/Demo/New/Ansible/
+     

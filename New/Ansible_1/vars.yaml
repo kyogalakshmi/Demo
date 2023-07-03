@@ -1,0 +1,30 @@
+- name: Play1
+  hosts: all
+  vars:
+   URL: play.google.com     # Global variable
+  vars_files:   #From external file
+   - dev-vars.yaml
+  vars_prompt:  #Prompting the Value from CLI
+   - name: UNAME
+     prompt: Enter the URLNAME
+     private: no
+  tasks:
+    - name: Printing Hello form play1
+      vars:
+       URL: task.gmail.com    # Local Variable
+      ansible.builtin.debug:
+       msg: "{{ URL }}"
+- name: Play2
+  hosts: prod
+  tasks:
+    - name: Printing Hello form play2
+      ansible.builtin.debug:
+       msg: "{{ Var }}"  # cmd line arg ->> -e Var=I_am_from_Prod_env
+- name: Play3
+  hosts: prod
+  tasks:
+   - name: Printing prompt
+     ansible.builtin.debug:
+       msg: "{{ UNAME }}"
+       # Precedence of variable
+       # commandline - Local - external File - Global

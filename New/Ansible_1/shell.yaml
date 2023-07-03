@@ -1,0 +1,20 @@
+- name: Demo on using Shell module
+  hosts: all
+  tasks:
+    - name: Demo on using Shell module
+      ansible.builtin.shell: uptime
+      register: OUT
+    - name: Printing the OUT Variable
+      ansible.builtin.debug:
+       msg: "{{OUT}}"
+    - name: Printing the STDOUT in OUT Variable
+      ansible.builtin.debug:
+       msg: "{{OUT.stdout}}"
+    - name: Set a complex variable
+      set_fact:
+        STATUSCODE: "{{OUT.rc}}"
+    - name: Printing the uptime command exit code
+      ansible.builtin.debug:
+        msg: uptime statuscode is {{STATUSCODE}}
+         
+      
